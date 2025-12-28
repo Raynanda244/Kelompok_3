@@ -1,0 +1,851 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <!--
+    Nama file    : bab4.html
+    Tanggal ngoding: 23 Desember 2025
+    Kelas        : 05TPLP014
+    Kelompok     : [Kelompok 3]
+    Anggota      : [Muhammad Sabil Bilqisthi ], [Sa’adah Rahma Ilahi], [Raynanda]
+    Deskripsi    : Halaman Materi Bab 4 - Framework CSS
+    -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bab 4: Framework CSS - WebDev Tutorial</title>
+    <link rel="stylesheet" href="../css/style.css"> 
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Bootstrap CDN -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        .framework-demo {
+            padding: 2rem;
+            border-radius: 8px;
+            margin: 2rem 0;
+            background-color: white;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        
+        .tailwind-demo {
+            padding: 2rem;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            border-radius: 8px;
+            margin: 2rem 0;
+        }
+        
+        .comparison-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 2rem 0;
+        }
+        
+        .comparison-table th,
+        .comparison-table td {
+            padding: 1rem;
+            text-align: left;
+            border-bottom: 1px solid #ddd;
+        }
+        
+        .comparison-table th {
+            background-color: #f8f9fa;
+            font-weight: bold;
+        }
+        
+        .comparison-table tr:hover {
+            background-color: #f5f5f5;
+        }
+        
+        .badge {
+            display: inline-block;
+            padding: 0.25rem 0.75rem;
+            border-radius: 50px;
+            font-size: 0.875rem;
+            font-weight: bold;
+            margin: 0.25rem;
+        }
+        
+        .badge.bootstrap {
+            background-color: #7952b3;
+            color: white;
+        }
+        
+        .badge.tailwind {
+            background-color: #38b2ac;
+            color: white;
+        }
+        
+        .badge.bulma {
+            background-color: #00d1b2;
+            color: white;
+        }
+        
+        .component-gallery {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin: 2rem 0;
+        }
+        
+        .component-card {
+            padding: 1.5rem;
+            border-radius: 8px;
+            background-color: white;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            transition: transform 0.3s;
+        }
+        
+        .component-card:hover {
+            transform: translateY(-5px);
+        }
+        
+        .framework-selector {
+            display: flex;
+            gap: 1rem;
+            margin: 2rem 0;
+            justify-content: center;
+        }
+        
+        .framework-btn {
+            padding: 1rem 2rem;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-weight: bold;
+            transition: all 0.3s;
+        }
+        
+        .framework-btn.active {
+            transform: scale(1.05);
+            box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+        }
+        
+        .demo-container {
+            padding: 2rem;
+            border-radius: 8px;
+            margin: 2rem 0;
+            min-height: 300px;
+        }
+        
+        .bootstrap-demo {
+            background-color: #f8f9fa;
+            border: 2px solid #7952b3;
+        }
+        
+        .tailwind-demo-box {
+            background-color: #f7fafc;
+            border: 2px solid #38b2ac;
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation Bar -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="../index.html" class="nav-logo">WebDev<span>Tutor</span></a>
+            <ul class="nav-menu">
+                <li class="nav-item"><a href="../index.html" class="nav-link"><i class="fas fa-home"></i> Home</a></li>
+                <li class="nav-item"><a href="../about.html" class="nav-link"><i class="fas fa-info-circle"></i> Tentang</a></li>
+                <li class="nav-item dropdown">
+                    <a href="#" class="nav-link active"><i class="fas fa-book"></i> Materi <i class="fas fa-chevron-down"></i></a>
+                    <div class="dropdown-content">
+                        <a href="bab1.html">Bab 1: Pengenalan HTML</a>
+                        <a href="bab2.html">Bab 2: CSS Dasar</a>
+                        <a href="bab3.html">Bab 3: JavaScript</a>
+                        <a href="bab4.html" class="active">Bab 4: Framework CSS</a>
+                    </div>
+                </li>
+                <li class="nav-item"><a href="../contact.html" class="nav-link"><i class="fas fa-envelope"></i> Kontak</a></li>
+            </ul>
+            <div class="hamburger">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Materi Content -->
+    <main class="materi-container">
+        <div class="materi-header">
+            <h1>Bab 4: Framework CSS</h1>
+            <p>Mempercepat pengembangan dengan framework CSS modern</p>
+        </div>
+        
+        <div class="materi-content">
+            <!-- Sub-bab 4.1 -->
+            <section class="sub-bab" id="pengenalan">
+                <h2>4.1 Pengenalan Framework CSS</h2>
+                <p>Framework CSS adalah kumpulan kode CSS yang sudah dibuat sebelumnya untuk mempercepat pengembangan website.</p>
+                
+                <h3>Mengapa Menggunakan Framework?</h3>
+                <ul>
+                    <li><strong>Konsistensi:</strong> Desain yang seragam di seluruh halaman</li>
+                    <li><strong>Efisiensi:</strong> Menghemat waktu pengembangan</li>
+                    <li><strong>Responsif:</strong> Sudah mendukung mobile-first design</li>
+                    <li><strong>Komponen Siap Pakai:</strong> Button, form, navbar, dll.</li>
+                    <li><strong>Komunitas:</strong> Dukungan dan dokumentasi yang luas</li>
+                </ul>
+                
+                <h3>Framework CSS Populer</h3>
+                <div class="framework-selector">
+                    <button class="framework-btn active" style="background-color: #7952b3; color: white;" 
+                            onclick="showFramework('bootstrap')">Bootstrap</button>
+                    <button class="framework-btn" style="background-color: #38b2ac; color: white;" 
+                            onclick="showFramework('tailwind')">Tailwind CSS</button>
+                    <button class="framework-btn" style="background-color: #00d1b2; color: white;" 
+                            onclick="showFramework('bulma')">Bulma</button>
+                    <button class="framework-btn" style="background-color: #2196f3; color: white;" 
+                            onclick="showFramework('foundation')">Foundation</button>
+                </div>
+                
+                <div class="demo-container bootstrap-demo" id="frameworkDemo">
+                    <h3>Bootstrap 5</h3>
+                    <p>Framework CSS yang paling populer dengan komponen siap pakai.</p>
+                    
+                    <div class="row">
+                        <div class="col-md-4">
+                            <div class="card">
+                                <div class="card-body">
+                                    <h5 class="card-title">Card Bootstrap</h5>
+                                    <p class="card-text">Contoh komponen card dari Bootstrap.</p>
+                                    <button class="btn btn-primary">Tombol Primary</button>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-8">
+                            <p>Bootstrap menggunakan sistem grid 12 kolom:</p>
+                            <div class="row">
+                                <div class="col-4 bg-primary text-white p-3">Kolom 4</div>
+                                <div class="col-4 bg-success text-white p-3">Kolom 4</div>
+                                <div class="col-4 bg-warning text-white p-3">Kolom 4</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Sub-bab 4.2 -->
+            <section class="sub-bab" id="perbandingan">
+                <h2>4.2 Perbandingan Framework</h2>
+                
+                <table class="comparison-table">
+                    <thead>
+                        <tr>
+                            <th>Framework</th>
+                            <th>Kelebihan</th>
+                            <th>Kekurangan</th>
+                            <th>Penggunaan</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><span class="badge bootstrap">Bootstrap</span></td>
+                            <td>Dokumentasi lengkap, komponen siap pakai, komunitas besar</td>
+                            <td>File size besar, desain "terlihat seperti Bootstrap"</td>
+                            <td>Aplikasi admin, dashboard, startup MVP</td>
+                        </tr>
+                        <tr>
+                            <td><span class="badge tailwind">Tailwind CSS</span></td>
+                            <td>Utility-first, customisasi tinggi, file size kecil</td>
+                            <td>Learning curve, banyak class di HTML</td>
+                            <td>Custom design, design system, proyek besar</td>
+                        </tr>
+                        <tr>
+                            <td><span class="badge bulma">Bulma</span></td>
+                            <td>Modern, hanya CSS (no JS), sintaks sederhana</td>
+                            <td>Komunitas lebih kecil, kurang populer</td>
+                            <td>Proyek kecil, preferensi minimal JS</td>
+                        </tr>
+                        <tr>
+                            <td><span class="badge" style="background-color: #2196f3;">Foundation</span></td>
+                            <td>Enterprise-ready, aksesibilitas baik, fleksibel</td>
+                            <td>Learning curve tinggi, dokumentasi kurang</td>
+                            <td>Enterprise, aplikasi kompleks</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </section>
+
+            <!-- Sub-bab 4.3 -->
+            <section class="sub-bab" id="bootstrap">
+                <h2>4.3 Bootstrap 5</h2>
+                <p>Framework CSS dengan komponen siap pakai dan sistem grid yang kuat.</p>
+                
+                <button class="code-toggle">Tampilkan Kode</button>
+                <div class="code-example" style="display: none;">
+                    <pre><code>&lt;!-- Bootstrap CDN --&gt;
+&lt;link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet"&gt;
+
+&lt;!-- Grid System --&gt;
+&lt;div class="container"&gt;
+  &lt;div class="row"&gt;
+    &lt;div class="col-md-4"&gt;Konten 1&lt;/div&gt;
+    &lt;div class="col-md-4"&gt;Konten 2&lt;/div&gt;
+    &lt;div class="col-md-4"&gt;Konten 3&lt;/div&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+
+&lt;!-- Button --&gt;
+&lt;button class="btn btn-primary"&gt;Primary Button&lt;/button&gt;
+&lt;button class="btn btn-secondary"&gt;Secondary Button&lt;/button&gt;
+
+&lt;!-- Card --&gt;
+&lt;div class="card" style="width: 18rem;"&gt;
+  &lt;div class="card-body"&gt;
+    &lt;h5 class="card-title"&gt;Judul Card&lt;/h5&gt;
+    &lt;p class="card-text"&gt;Deskripsi card.&lt;/p&gt;
+    &lt;a href="#" class="btn btn-primary"&gt;Go somewhere&lt;/a&gt;
+  &lt;/div&gt;
+&lt;/div&gt;</code></pre>
+                </div>
+                
+                <h3>Demo: Komponen Bootstrap</h3>
+                <div class="component-gallery">
+                    <div class="component-card">
+                        <h4>Alerts</h4>
+                        <div class="alert alert-primary" role="alert">
+                            Primary alert—check it out!
+                        </div>
+                        <div class="alert alert-success" role="alert">
+                            Success alert—well done!
+                        </div>
+                    </div>
+                    
+                    <div class="component-card">
+                        <h4>Buttons</h4>
+                        <button type="button" class="btn btn-primary m-1">Primary</button>
+                        <button type="button" class="btn btn-secondary m-1">Secondary</button>
+                        <button type="button" class="btn btn-success m-1">Success</button>
+                        <button type="button" class="btn btn-danger m-1">Danger</button>
+                        <button type="button" class="btn btn-warning m-1">Warning</button>
+                        <button type="button" class="btn btn-info m-1">Info</button>
+                    </div>
+                    
+                    <div class="component-card">
+                        <h4>Forms</h4>
+                        <div class="mb-3">
+                            <label for="exampleInput" class="form-label">Email address</label>
+                            <input type="email" class="form-control" id="exampleInput">
+                        </div>
+                        <div class="mb-3">
+                            <label for="exampleSelect" class="form-label">Select option</label>
+                            <select class="form-select" id="exampleSelect">
+                                <option selected>Open this select menu</option>
+                                <option value="1">One</option>
+                                <option value="2">Two</option>
+                                <option value="3">Three</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Sub-bab 4.4 -->
+            <section class="sub-bab" id="tailwind">
+                <h2>4.4 Tailwind CSS</h2>
+                <p>Utility-first CSS framework untuk custom design yang cepat.</p>
+                
+                <button class="code-toggle">Tampilkan Kode</button>
+                <div class="code-example" style="display: none;">
+                    <pre><code>&lt;!-- Tailwind via CDN --&gt;
+&lt;script src="https://cdn.tailwindcss.com"&gt;&lt;/script&gt;
+
+&lt;!-- Utility Classes --&gt;
+&lt;div class="bg-blue-500 text-white p-4 rounded-lg shadow-lg"&gt;
+  &lt;h2 class="text-2xl font-bold mb-2"&gt;Judul&lt;/h2&gt;
+  &lt;p class="text-sm opacity-90"&gt;Deskripsi dengan Tailwind CSS&lt;/p&gt;
+&lt;/div&gt;
+
+&lt;!-- Grid dengan Tailwind --&gt;
+&lt;div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4"&gt;
+  &lt;div class="bg-gray-100 p-4"&gt;Item 1&lt;/div&gt;
+  &lt;div class="bg-gray-100 p-4"&gt;Item 2&lt;/div&gt;
+  &lt;div class="bg-gray-100 p-4"&gt;Item 3&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;!-- Button --&gt;
+&lt;button class="bg-blue-600 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded"&gt;
+  Tailwind Button
+&lt;/button&gt;</code></pre>
+                </div>
+                
+                <div class="tailwind-demo">
+                    <h3 class="text-3xl font-bold mb-4">Tailwind CSS in Action</h3>
+                    <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+                        <div class="bg-white/20 p-4 rounded-lg backdrop-blur-sm">
+                            <h4 class="text-xl font-semibold mb-2">Utility First</h4>
+                            <p class="text-sm">Bangun custom design tanpa menulis CSS custom.</p>
+                        </div>
+                        <div class="bg-white/20 p-4 rounded-lg backdrop-blur-sm">
+                            <h4 class="text-xl font-semibold mb-2">Responsive</h4>
+                            <p class="text-sm">Mobile-first dengan breakpoints yang mudah.</p>
+                        </div>
+                        <div class="bg-white/20 p-4 rounded-lg backdrop-blur-sm">
+                            <h4 class="text-xl font-semibold mb-2">Customizable</h4>
+                            <p class="text-sm">Konfigurasi penuh dengan tailwind.config.js.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="mt-6 flex gap-4 justify-center">
+                        <button class="bg-white text-purple-700 font-bold py-2 px-6 rounded-full hover:bg-gray-100 transition">
+                            Primary Button
+                        </button>
+                        <button class="border-2 border-white text-white font-bold py-2 px-6 rounded-full hover:bg-white/10 transition">
+                            Outline Button
+                        </button>
+                    </div>
+                </div>
+                
+                <h3>Tailwind vs Custom CSS</h3>
+                <div class="framework-demo">
+                    <div class="row">
+                        <div class="col-md-6">
+                            <h4>Tailwind CSS</h4>
+<pre><code>&lt;div class="max-w-md mx-auto 
+            bg-white rounded-xl 
+            shadow-md overflow-hidden 
+            md:max-w-2xl"&gt;
+  &lt;div class="md:flex"&gt;
+    &lt;div class="p-8"&gt;
+      &lt;div class="uppercase 
+                  tracking-wide 
+                  text-sm text-indigo-500 
+                  font-semibold"&gt;
+        Case study
+      &lt;/div&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+&lt;/div&gt;</code></pre>
+                        </div>
+                        <div class="col-md-6">
+                            <h4>Custom CSS</h4>
+<pre><code>.card {
+  max-width: 28rem;
+  margin: 0 auto;
+  background: white;
+  border-radius: 0.75rem;
+  box-shadow: 0 4px 6px -1px rgba(0,0,0,0.1);
+  overflow: hidden;
+}
+
+@media (min-width: 768px) {
+  .card {
+    max-width: 42rem;
+  }
+  .card-content {
+    display: flex;
+  }
+}
+
+.card-content {
+  padding: 2rem;
+}
+
+.category {
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  font-size: 0.875rem;
+  color: #6366f1;
+  font-weight: 600;
+}</code></pre>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Sub-bab 4.5 -->
+            <section class="sub-bab" id="pemilihan">
+                <h2>4.5 Memilih Framework yang Tepat</h2>
+                
+                <div class="framework-demo">
+                    <h3>Pertimbangan Pemilihan</h3>
+                    <div class="row">
+                        <div class="col-md-6">
+                            <h4>Pilih Bootstrap jika:</h4>
+                            <ul>
+                                <li>Ingin cepat launch MVP</li>
+                                <li>Tim familiar dengan Bootstrap</li>
+                                <li>Butuh banyak komponen siap pakai</li>
+                                <li>Proyek admin/dashboard</li>
+                                <li>Prioritas konsistensi & dokumentasi</li>
+                            </ul>
+                        </div>
+                        <div class="col-md-6">
+                            <h4>Pilih Tailwind jika:</h4>
+                            <ul>
+                                <li>Ingin custom design unik</li>
+                                <li>Tim suka utility classes</li>
+                                <li>Proyek besar dengan design system</li>
+                                <li>Prioritas performance & file size</li>
+                                <li>Mau menghindari "look Bootstrap"</li>
+                            </ul>
+                        </div>
+                    </div>
+                    
+                    <h4 class="mt-4">Decision Tree</h4>
+                    <div style="background-color: #f8f9fa; padding: 1.5rem; border-radius: 8px; margin: 1rem 0;">
+                        <p><strong>Q: Apakah proyek membutuhkan design custom yang unik?</strong></p>
+                        <p>→ Ya: <span class="badge tailwind">Tailwind CSS</span></p>
+                        <p>→ Tidak, butuh cepat: <span class="badge bootstrap">Bootstrap</span></p>
+                        <p>→ Tidak, minimal JS: <span class="badge bulma">Bulma</span></p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Sub-bab 4.6 -->
+            <section class="sub-bab" id="implementasi">
+                <h2>4.6 Implementasi Framework</h2>
+                
+                <h3>Setup Bootstrap</h3>
+                <button class="code-toggle">Tampilkan Kode</button>
+                <div class="code-example" style="display: none;">
+<pre><code>&lt;!-- Method 1: CDN (Cepat) --&gt;
+&lt;link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet"&gt;
+&lt;script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"&gt;&lt;/script&gt;
+
+&lt;!-- Method 2: NPM (Proyek Besar) --&gt;
+npm install bootstrap
+
+// Di file JavaScript
+import 'bootstrap/dist/css/bootstrap.min.css';
+import 'bootstrap';
+
+&lt;!-- Method 3: Download --&gt;
+Download dari getbootstrap.com</code></pre>
+                </div>
+                
+                <h3>Setup Tailwind CSS</h3>
+                <button class="code-toggle">Tampilkan Kode</button>
+                <div class="code-example" style="display: none;">
+<pre><code>&lt;!-- Method 1: CDN Play (Development) --&gt;
+&lt;script src="https://cdn.tailwindcss.com"&gt;&lt;/script&gt;
+
+&lt;!-- Method 2: NPM (Production) --&gt;
+npm install -D tailwindcss
+npx tailwindcss init
+
+// tailwind.config.js
+module.exports = {
+  content: ["./src/**/*.{html,js}"],
+  theme: {
+    extend: {},
+  },
+  plugins: [],
+}
+
+// style.css
+@tailwind base;
+@tailwind components;
+@tailwind utilities;</code></pre>
+                </div>
+                
+                <h3>Demo: Switch Framework</h3>
+                <div class="framework-demo">
+                    <div class="mb-3">
+                        <label class="form-label">Pilih Framework untuk Preview:</label>
+                        <select class="form-select" id="frameworkSwitch" onchange="switchFramework(this.value)">
+                            <option value="bootstrap">Bootstrap</option>
+                            <option value="tailwind">Tailwind CSS</option>
+                            <option value="bulma">Bulma</option>
+                        </select>
+                    </div>
+                    
+                    <div id="livePreview" class="p-4 border rounded">
+                        <!-- Live preview akan diupdate oleh JavaScript -->
+                        <h4 id="previewTitle">Bootstrap Component</h4>
+                        <p id="previewText">Ini adalah contoh komponen dengan Bootstrap.</p>
+                        <div id="previewButtons">
+                            <button class="btn btn-primary">Primary</button>
+                            <button class="btn btn-secondary">Secondary</button>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Latihan Interaktif -->
+            <section class="sub-bab" id="latihan">
+                <h2>Latihan Framework CSS</h2>
+                
+                <div class="exercise">
+                    <h3>Soal 1: Buat Grid Bootstrap</h3>
+                    <p>Buat grid Bootstrap dengan 3 kolom yang sama lebar di desktop, 2 kolom di tablet, dan 1 kolom di mobile.</p>
+                    
+                    <div class="code-editor">
+                        <textarea id="frameworkExercise1" rows="8" placeholder="Tulis kode HTML dengan Bootstrap di sini...">&lt;div class="container"&gt;
+  &lt;div class="row"&gt;
+    &lt;!-- Tulis kode di sini --&gt;
+  &lt;/div&gt;
+&lt;/div&gt;</textarea>
+                        <button class="btn-secondary" onclick="checkFrameworkExercise(1)">Cek Jawaban</button>
+                        <div id="frameworkResult1"></div>
+                        <div id="frameworkPreview1" class="mt-3"></div>
+                    </div>
+                </div>
+                
+                <div class="exercise">
+                    <h3>Soal 2: Tailwind Button</h3>
+                    <p>Buat button Tailwind dengan:</p>
+                    <ul>
+                        <li>Background biru gelap (#1e40af)</li>
+                        <li>Text putih</li>
+                        <li>Padding 8px vertikal, 16px horizontal</li>
+                        <li>Border radius medium</li>
+                        <li>Shadow saat hover</li>
+                    </ul>
+                    
+                    <div class="code-editor">
+                        <textarea id="frameworkExercise2" rows="4" placeholder="Tulis kode HTML dengan Tailwind di sini..."></textarea>
+                        <button class="btn-secondary" onclick="checkFrameworkExercise(2)">Cek Jawaban</button>
+                        <div id="frameworkResult2"></div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Navigasi Bab -->
+            <div class="bab-navigation">
+                <a href="bab3.html" class="btn-secondary"><i class="fas fa-arrow-left"></i> Bab Sebelumnya</a>
+                <a href="../index.html" class="btn-primary"><i class="fas fa-home"></i> Kembali ke Home</a>
+            </div>
+        </div>
+    </main>
+
+    <footer class="footer">
+        <p>&copy; 2025 WebDev Tutorial.[Kelompok 3] - 05TPLP014</p>
+        <p>Proyek UAS Pemrograman Web 1</p>
+    </footer>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="../js/script.js"></script>
+    <script>
+        // Framework selector
+        function showFramework(framework) {
+            const buttons = document.querySelectorAll('.framework-btn');
+            buttons.forEach(btn => btn.classList.remove('active'));
+            
+            event.target.classList.add('active');
+            
+            const demo = document.getElementById('frameworkDemo');
+            
+            switch(framework) {
+                case 'bootstrap':
+                    demo.innerHTML = `
+                        <h3>Bootstrap 5</h3>
+                        <p>Framework CSS yang paling populer dengan komponen siap pakai.</p>
+                        
+                        <div class="row">
+                            <div class="col-md-4">
+                                <div class="card">
+                                    <div class="card-body">
+                                        <h5 class="card-title">Card Bootstrap</h5>
+                                        <p class="card-text">Contoh komponen card dari Bootstrap.</p>
+                                        <button class="btn btn-primary">Tombol Primary</button>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-8">
+                                <p>Bootstrap menggunakan sistem grid 12 kolom:</p>
+                                <div class="row">
+                                    <div class="col-4 bg-primary text-white p-3">Kolom 4</div>
+                                    <div class="col-4 bg-success text-white p-3">Kolom 4</div>
+                                    <div class="col-4 bg-warning text-white p-3">Kolom 4</div>
+                                </div>
+                            </div>
+                        </div>
+                    `;
+                    demo.className = 'demo-container bootstrap-demo';
+                    break;
+                    
+                case 'tailwind':
+                    demo.innerHTML = `
+                        <h3>Tailwind CSS</h3>
+                        <p>Utility-first CSS framework untuk custom design yang cepat.</p>
+                        
+                        <div class="p-6 bg-gradient-to-r from-blue-500 to-purple-600 text-white rounded-lg">
+                            <h4 class="text-2xl font-bold mb-4">Tailwind Demo</h4>
+                            <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                                <div class="bg-white/20 p-4 rounded-lg backdrop-blur-sm">
+                                    <h5 class="font-bold">Utility Classes</h5>
+                                    <p class="text-sm">Bangun design dengan class langsung di HTML</p>
+                                </div>
+                                <div class="bg-white/20 p-4 rounded-lg backdrop-blur-sm">
+                                    <h5 class="font-bold">Responsive</h5>
+                                    <p class="text-sm">Mobile-first dengan prefix: sm:, md:, lg:</p>
+                                </div>
+                            </div>
+                            <div class="mt-6">
+                                <button class="bg-white text-blue-600 font-bold py-2 px-6 rounded-lg hover:bg-gray-100 transition">
+                                    Tailwind Button
+                                </button>
+                            </div>
+                        </div>
+                    `;
+                    demo.className = 'demo-container tailwind-demo-box';
+                    break;
+                    
+                case 'bulma':
+                    demo.innerHTML = `
+                        <h3>Bulma</h3>
+                        <p>Framework CSS modern berbasis Flexbox.</p>
+                        
+                        <div class="box" style="background-color: #f5f5f5; padding: 2rem; border-radius: 6px;">
+                            <h4 class="title is-4" style="margin-bottom: 1rem;">Bulma Components</h4>
+                            <div class="columns">
+                                <div class="column">
+                                    <div class="notification is-primary">
+                                        Primary notification
+                                    </div>
+                                </div>
+                                <div class="column">
+                                    <div class="notification is-link">
+                                        Link notification
+                                    </div>
+                                </div>
+                            </div>
+                            <button class="button is-primary" style="margin-right: 0.5rem;">Primary</button>
+                            <button class="button is-link">Link</button>
+                        </div>
+                    `;
+                    demo.className = 'demo-container';
+                    break;
+                    
+                case 'foundation':
+                    demo.innerHTML = `
+                        <h3>Foundation</h3>
+                        <p>Framework CSS untuk aplikasi enterprise.</p>
+                        
+                        <div style="background-color: #f0f0f0; padding: 2rem; border-radius: 6px;">
+                            <h4 style="margin-bottom: 1rem;">Foundation Grid</h4>
+                            <div class="grid-x grid-margin-x">
+                                <div class="cell small-6" style="background-color: #2196f3; color: white; padding: 1rem; border-radius: 4px;">
+                                    Cell 1
+                                </div>
+                                <div class="cell small-6" style="background-color: #4caf50; color: white; padding: 1rem; border-radius: 4px;">
+                                    Cell 2
+                                </div>
+                            </div>
+                            <div style="margin-top: 1rem;">
+                                <button style="background-color: #2196f3; color: white; border: none; padding: 0.5rem 1rem; border-radius: 4px; margin-right: 0.5rem;">
+                                    Foundation Button
+                                </button>
+                            </div>
+                        </div>
+                    `;
+                    demo.className = 'demo-container';
+                    break;
+            }
+        }
+        
+        // Framework switcher
+        function switchFramework(framework) {
+            const preview = document.getElementById('livePreview');
+            const title = document.getElementById('previewTitle');
+            const text = document.getElementById('previewText');
+            const buttons = document.getElementById('previewButtons');
+            
+            switch(framework) {
+                case 'bootstrap':
+                    title.textContent = 'Bootstrap Component';
+                    text.textContent = 'Ini adalah contoh komponen dengan Bootstrap 5.';
+                    buttons.innerHTML = `
+                        <button class="btn btn-primary">Primary</button>
+                        <button class="btn btn-secondary">Secondary</button>
+                        <button class="btn btn-success">Success</button>
+                    `;
+                    preview.className = 'p-4 border rounded';
+                    break;
+                    
+                case 'tailwind':
+                    title.textContent = 'Tailwind CSS Component';
+                    text.textContent = 'Ini adalah contoh dengan utility classes Tailwind.';
+                    buttons.innerHTML = `
+                        <button class="bg-blue-600 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded mr-2">
+                            Primary
+                        </button>
+                        <button class="bg-gray-600 hover:bg-gray-700 text-white font-bold py-2 px-4 rounded mr-2">
+                            Secondary
+                        </button>
+                        <button class="bg-green-600 hover:bg-green-700 text-white font-bold py-2 px-4 rounded">
+                            Success
+                        </button>
+                    `;
+                    preview.className = 'p-4 border rounded';
+                    break;
+                    
+                case 'bulma':
+                    title.textContent = 'Bulma Component';
+                    text.textContent = 'Ini adalah contoh dengan framework Bulma.';
+                    buttons.innerHTML = `
+                        <button class="button is-primary mr-2" style="background-color: #00d1b2; color: white; border: none; padding: 0.5rem 1rem; border-radius: 4px;">
+                            Primary
+                        </button>
+                        <button class="button is-link mr-2" style="background-color: #3273dc; color: white; border: none; padding: 0.5rem 1rem; border-radius: 4px;">
+                            Secondary
+                        </button>
+                        <button class="button is-success" style="background-color: #23d160; color: white; border: none; padding: 0.5rem 1rem; border-radius: 4px;">
+                            Success
+                        </button>
+                    `;
+                    preview.className = 'p-4 border rounded';
+                    break;
+            }
+        }
+        
+        // Exercise checking
+        function checkFrameworkExercise(num) {
+            const code = document.getElementById(`frameworkExercise${num}`).value.trim();
+            const result = document.getElementById(`frameworkResult${num}`);
+            
+            if (num === 1) {
+                // Check Bootstrap grid
+                const hasColLg4 = code.includes('col-lg-4') || code.includes('col-xl-4');
+                const hasColMd6 = code.includes('col-md-6');
+                const hasColSm12 = code.includes('col-sm-12') || code.includes('col-12');
+                const hasThreeColumns = (code.match(/col-/g) || []).length >= 3;
+                
+                if (hasColLg4 && hasColMd6 && hasThreeColumns) {
+                    result.innerHTML = '<span style="color:#27ae60">✓ Grid Bootstrap benar!</span>';
+                    
+                    // Show preview
+                    const preview = document.getElementById('frameworkPreview1');
+                    preview.innerHTML = code;
+                } else {
+                    result.innerHTML = `
+                        <span style="color:#e74c3c">✗ Periksa grid Anda. Contoh jawaban:</span><br>
+                        <code>&lt;div class="col-12 col-md-6 col-lg-4"&gt;Kolom 1&lt;/div&gt;</code>
+                    `;
+                }
+            } else {
+                // Check Tailwind button
+                const hasBgColor = code.includes('bg-blue-') || code.includes('#1e40af') || code.includes('bg-indigo-');
+                const hasTextWhite = code.includes('text-white');
+                const hasPadding = code.includes('py-2') || code.includes('py-8');
+                const hasPaddingX = code.includes('px-4') || code.includes('px-16');
+                const hasRounded = code.includes('rounded') || code.includes('rounded-md');
+                const hasHover = code.includes('hover:') || code.includes('shadow');
+                
+                if (hasBgColor && hasTextWhite && hasPadding && hasRounded) {
+                    result.innerHTML = '<span style="color:#27ae60">✓ Button Tailwind benar!</span>';
+                } else {
+                    result.innerHTML = `
+                        <span style="color:#e74c3c">✗ Periksa button Anda. Contoh jawaban:</span><br>
+                        <code>&lt;button class="bg-blue-800 text-white py-2 px-4 rounded hover:shadow-lg"&gt;Button&lt;/button&gt;</code>
+                    `;
+                }
+            }
+        }
+        
+        // Initialize
+        document.addEventListener('DOMContentLoaded', function() {
+            // Set contoh untuk exercise 2
+            document.getElementById('frameworkExercise2').value = 
+`<button class="bg-blue-800 text-white py-2 px-4 rounded-md hover:shadow-lg">
+  Tailwind Button
+</button>`;
+            
+            // Initialize framework demo
+            switchFramework('bootstrap');
+        });
+    </script>
+</body>
+</html>

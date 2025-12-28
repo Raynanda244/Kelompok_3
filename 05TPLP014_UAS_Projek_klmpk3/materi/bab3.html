@@ -1,0 +1,733 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <!--
+    Nama file    : bab3.html
+    Tanggal ngoding: 23 Desember 2025
+    Kelas        : 05TPLP014
+    Kelompok     : [Kelompok 3]
+    Anggota      : [Muhammad Sabil Bilqisthi ], [Sa’adah Rahma Ilahi], [Raynanda]
+    Deskripsi    : Halaman Materi Bab 3 - JavaScript
+    -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bab 3: JavaScript - WebDev Tutorial</title>
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        .js-demo {
+            padding: 2rem;
+            background-color: #f8f9fa;
+            border-radius: 8px;
+            margin: 1rem 0;
+            border-left: 4px solid #f39c12;
+        }
+        
+        .counter-display {
+            font-size: 3rem;
+            font-weight: bold;
+            color: #2c3e50;
+            text-align: center;
+            margin: 1rem 0;
+        }
+        
+        .button-group {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+            margin: 1rem 0;
+        }
+        
+        .todo-container {
+            background-color: white;
+            border-radius: 8px;
+            padding: 1.5rem;
+            margin: 2rem 0;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        
+        .todo-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0.8rem;
+            margin: 0.5rem 0;
+            background-color: #ecf0f1;
+            border-radius: 4px;
+        }
+        
+        .todo-item.completed {
+            text-decoration: line-through;
+            opacity: 0.6;
+        }
+        
+        .calculator {
+            background-color: #2c3e50;
+            padding: 2rem;
+            border-radius: 8px;
+            max-width: 300px;
+            margin: 2rem auto;
+        }
+        
+        .calculator-display {
+            background-color: #34495e;
+            color: white;
+            padding: 1rem;
+            text-align: right;
+            font-size: 2rem;
+            border-radius: 4px;
+            margin-bottom: 1rem;
+            min-height: 60px;
+            word-wrap: break-word;
+        }
+        
+        .calculator-buttons {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 0.5rem;
+        }
+        
+        .calc-btn {
+            padding: 1rem;
+            font-size: 1.2rem;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            background-color: #ecf0f1;
+            transition: background-color 0.3s;
+        }
+        
+        .calc-btn:hover {
+            background-color: #bdc3c7;
+        }
+        
+        .calc-btn.operator {
+            background-color: #f39c12;
+            color: white;
+        }
+        
+        .api-demo {
+            background-color: #34495e;
+            color: white;
+            padding: 2rem;
+            border-radius: 8px;
+            margin: 2rem 0;
+        }
+        
+        .user-card {
+            background-color: #2c3e50;
+            padding: 1rem;
+            border-radius: 4px;
+            margin: 1rem 0;
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+        
+        .user-avatar {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            background-color: #3498db;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation Bar -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="../index.html" class="nav-logo">WebDev<span>Tutor</span></a>
+            <ul class="nav-menu">
+                <li class="nav-item"><a href="../index.html" class="nav-link"><i class="fas fa-home"></i> Home</a></li>
+                <li class="nav-item"><a href="../about.html" class="nav-link"><i class="fas fa-info-circle"></i> Tentang</a></li>
+                <li class="nav-item dropdown">
+                    <a href="#" class="nav-link active"><i class="fas fa-book"></i> Materi <i class="fas fa-chevron-down"></i></a>
+                    <div class="dropdown-content">
+                        <a href="bab1.html">Bab 1: Pengenalan HTML</a>
+                        <a href="bab2.html">Bab 2: CSS Dasar</a>
+                        <a href="bab3.html" class="active">Bab 3: JavaScript</a>
+                        <a href="bab4.html">Bab 4: Framework CSS</a>
+                    </div>
+                </li>
+                <li class="nav-item"><a href="../contact.html" class="nav-link"><i class="fas fa-envelope"></i> Kontak</a></li>
+            </ul>
+            <div class="hamburger">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Materi Content -->
+    <main class="materi-container">
+        <div class="materi-header">
+            <h1>Bab 3: JavaScript</h1>
+            <p>Membuat website interaktif dengan JavaScript</p>
+        </div>
+        
+        <div class="materi-content">
+            <!-- Sub-bab 3.1 -->
+            <section class="sub-bab" id="variabel">
+                <h2>3.1 Variabel & Tipe Data</h2>
+                <p>JavaScript memiliki 3 cara deklarasi variabel: <code>var</code>, <code>let</code>, dan <code>const</code>.</p>
+                
+                <button class="code-toggle">Tampilkan Kode</button>
+                <div class="code-example" style="display: none;">
+                    <pre><code>// Deklarasi variabel
+var namaLama = "Ini var"; // Function scope
+let namaBaru = "Ini let"; // Block scope
+const PI = 3.14; // Konstanta, tidak bisa diubah
+
+// Tipe data
+let string = "Hello World"; // String
+let number = 42; // Number
+let boolean = true; // Boolean
+let array = [1, 2, 3]; // Array
+let object = {nama: "John", usia: 25}; // Object
+let kosong = null; // Null
+let tidakTerdefinisi = undefined; // Undefined
+
+// Type checking
+console.log(typeof string); // "string"
+console.log(typeof number); // "number"
+console.log(typeof boolean); // "boolean"
+console.log(typeof array); // "object"
+console.log(Array.isArray(array)); // true</code></pre>
+                </div>
+                
+                <h3>Demo: Manipulasi Variabel</h3>
+                <div class="js-demo">
+                    <div class="counter-display" id="counter">0</div>
+                    <div class="button-group">
+                        <button class="btn-secondary" onclick="decrement()"><i class="fas fa-minus"></i> Kurangi</button>
+                        <button class="btn-secondary" onclick="resetCounter()"><i class="fas fa-redo"></i> Reset</button>
+                        <button class="btn-secondary" onclick="increment()"><i class="fas fa-plus"></i> Tambah</button>
+                    </div>
+                    <p>Counter bertipe: <span id="counterType">number</span></p>
+                </div>
+            </section>
+
+            <!-- Sub-bab 3.2 -->
+            <section class="sub-bab" id="event">
+                <h2>3.2 Event & DOM Manipulation</h2>
+                <p>Event digunakan untuk menangani interaksi pengguna.</p>
+                
+                <h3>Event Listener</h3>
+                <button class="code-toggle">Tampilkan Kode</button>
+                <div class="code-example" style="display: none;">
+                    <pre><code>// Mengakses elemen DOM
+const button = document.getElementById('myButton');
+const output = document.querySelector('.output');
+
+// Menambahkan event listener
+button.addEventListener('click', function() {
+    output.textContent = 'Tombol diklik!';
+    output.style.color = 'green';
+});
+
+// Event mouse
+element.addEventListener('mouseover', function() {
+    this.style.backgroundColor = 'yellow';
+});
+
+element.addEventListener('mouseout', function() {
+    this.style.backgroundColor = '';
+});
+
+// Event keyboard
+input.addEventListener('keyup', function(event) {
+    console.log('Key pressed:', event.key);
+});
+
+// Event form
+form.addEventListener('submit', function(event) {
+    event.preventDefault(); // Mencegah reload
+    // Proses form
+});</code></pre>
+                </div>
+                
+                <h3>Demo: Color Picker</h3>
+                <div class="js-demo">
+                    <div id="colorBox" style="width: 200px; height: 100px; background-color: #3498db; margin: 1rem auto; border-radius: 4px;"></div>
+                    <div class="button-group">
+                        <input type="color" id="colorPicker" value="#3498db" onchange="changeColor(this.value)">
+                        <button class="btn-secondary" onclick="randomColor()">Warna Acak</button>
+                    </div>
+                    <p id="currentColor">Warna saat ini: #3498db</p>
+                </div>
+            </section>
+
+            <!-- Sub-bab 3.3 -->
+            <section class="sub-bab" id="ajax">
+                <h2>3.3 AJAX & Fetch API</h2>
+                <p>Fetch API untuk mengambil data dari server tanpa reload halaman.</p>
+                
+                <button class="code-toggle">Tampilkan Kode</button>
+                <div class="code-example" style="display: none;">
+                    <pre><code>// Fetch API dasar
+fetch('https://api.contoh.com/data')
+    .then(response => response.json())
+    .then(data => {
+        console.log(data);
+        // Proses data
+    })
+    .catch(error => {
+        console.error('Error:', error);
+    });
+
+// Dengan async/await
+async function getData() {
+    try {
+        const response = await fetch('https://api.contoh.com/data');
+        const data = await response.json();
+        return data;
+    } catch (error) {
+        console.error('Error:', error);
+    }
+}
+
+// POST request
+fetch('https://api.contoh.com/data', {
+    method: 'POST',
+    headers: {
+        'Content-Type': 'application/json'
+    },
+    body: JSON.stringify({
+        nama: 'John',
+        usia: 25
+    })
+});</code></pre>
+                </div>
+                
+                <h3>Demo: Fetch Data Pengguna</h3>
+                <div class="api-demo">
+                    <button class="btn-primary" onclick="fetchUsers()"><i class="fas fa-users"></i> Ambil Data Pengguna</button>
+                    <button class="btn-secondary" onclick="clearUsers()"><i class="fas fa-trash"></i> Hapus Data</button>
+                    
+                    <div id="userList" style="margin-top: 1rem;">
+                        <!-- Data pengguna akan muncul di sini -->
+                    </div>
+                </div>
+            </section>
+
+            <!-- Sub-bab 3.4 -->
+            <section class="sub-bab" id="todolist">
+                <h2>To-Do List Interaktif</h2>
+                <p>Aplikasi sederhana untuk mempraktikkan JavaScript.</p>
+                
+                <div class="todo-container">
+                    <h3>To-Do List</h3>
+                    <div class="input-group" style="display: flex; gap: 1rem; margin: 1rem 0;">
+                        <input type="text" id="todoInput" placeholder="Tambah tugas baru..." style="flex: 1; padding: 0.8rem;">
+                        <button class="btn-primary" onclick="addTodo()"><i class="fas fa-plus"></i> Tambah</button>
+                    </div>
+                    
+                    <div id="todoList">
+                        <!-- Daftar todo akan muncul di sini -->
+                        <p style="text-align: center; color: #7f8c8d;">Belum ada tugas. Tambahkan tugas pertama Anda!</p>
+                    </div>
+                    
+                    <div style="margin-top: 1rem; text-align: center;">
+                        <small>Tugas: <span id="todoCount">0</span> | Selesai: <span id="completedCount">0</span></small>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Sub-bab 3.5 -->
+            <section class="sub-bab" id="kalkulator">
+                <h2>Kalkulator JavaScript</h2>
+                <p>Kalkulator sederhana dengan operasi matematika dasar.</p>
+                
+                <div class="calculator">
+                    <div class="calculator-display" id="calcDisplay">0</div>
+                    <div class="calculator-buttons">
+                        <button class="calc-btn" onclick="clearCalculator()">C</button>
+                        <button class="calc-btn" onclick="deleteLast()">⌫</button>
+                        <button class="calc-btn operator" onclick="appendOperator('/')">/</button>
+                        <button class="calc-btn operator" onclick="appendOperator('*')">×</button>
+                        
+                        <button class="calc-btn" onclick="appendNumber('7')">7</button>
+                        <button class="calc-btn" onclick="appendNumber('8')">8</button>
+                        <button class="calc-btn" onclick="appendNumber('9')">9</button>
+                        <button class="calc-btn operator" onclick="appendOperator('-')">-</button>
+                        
+                        <button class="calc-btn" onclick="appendNumber('4')">4</button>
+                        <button class="calc-btn" onclick="appendNumber('5')">5</button>
+                        <button class="calc-btn" onclick="appendNumber('6')">6</button>
+                        <button class="calc-btn operator" onclick="appendOperator('+')">+</button>
+                        
+                        <button class="calc-btn" onclick="appendNumber('1')">1</button>
+                        <button class="calc-btn" onclick="appendNumber('2')">2</button>
+                        <button class="calc-btn" onclick="appendNumber('3')">3</button>
+                        <button class="calc-btn operator" onclick="calculate()" style="grid-row: span 2;">=</button>
+                        
+                        <button class="calc-btn" onclick="appendNumber('0')" style="grid-column: span 2;">0</button>
+                        <button class="calc-btn" onclick="appendDecimal()">.</button>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Latihan Interaktif -->
+            <section class="sub-bab" id="latihan">
+                <h2>Latihan JavaScript</h2>
+                
+                <div class="exercise">
+                    <h3>Soal 1: Function Penjumlahan</h3>
+                    <p>Buat function untuk menjumlahkan dua angka</p>
+                    
+                    <div class="code-editor">
+                        <textarea id="jsExercise1" rows="6" placeholder="Tulis kode JavaScript di sini...">function jumlahkan(a, b) {
+    // Lengkapi kode di sini
+}</textarea>
+                        <button class="btn-secondary" onclick="checkJSExercise(1)">Cek Jawaban</button>
+                        <div id="jsResult1"></div>
+                        <div style="margin-top: 1rem;">
+                            <button class="btn-secondary" onclick="testFunction()">Test Function</button>
+                            <p id="testResult"></p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="exercise">
+                    <h3>Soal 2: Array Manipulation</h3>
+                    <p>Buat function untuk mencari angka terbesar dalam array</p>
+                    
+                    <div class="code-editor">
+                        <textarea id="jsExercise2" rows="6" placeholder="Tulis kode JavaScript di sini..."></textarea>
+                        <button class="btn-secondary" onclick="checkJSExercise(2)">Cek Jawaban</button>
+                        <div id="jsResult2"></div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Navigasi Bab -->
+            <div class="bab-navigation">
+                <a href="bab2.html" class="btn-secondary"><i class="fas fa-arrow-left"></i> Bab Sebelumnya</a>
+                <a href="bab4.html" class="btn-primary">Bab Selanjutnya: Framework CSS <i class="fas fa-arrow-right"></i></a>
+            </div>
+        </div>
+    </main>
+
+    <footer class="footer">
+        <p>&copy; 2025 WebDev Tutorial.[Kelompok 3] - 05TPLP014</p>
+        <p>Proyek UAS Pemrograman Web 1</p>
+    </footer>
+
+    <script src="../js/script.js"></script>
+    <script>
+        // Counter functions
+        let counter = 0;
+        
+        function increment() {
+            counter++;
+            updateCounter();
+        }
+        
+        function decrement() {
+            counter--;
+            updateCounter();
+        }
+        
+        function resetCounter() {
+            counter = 0;
+            updateCounter();
+        }
+        
+        function updateCounter() {
+            document.getElementById('counter').textContent = counter;
+            document.getElementById('counterType').textContent = typeof counter;
+        }
+        
+        // Color picker functions
+        function changeColor(color) {
+            const box = document.getElementById('colorBox');
+            const text = document.getElementById('currentColor');
+            box.style.backgroundColor = color;
+            text.textContent = `Warna saat ini: ${color}`;
+        }
+        
+        function randomColor() {
+            const colors = ['#3498db', '#e74c3c', '#2ecc71', '#f39c12', '#9b59b6', '#1abc9c'];
+            const randomColor = colors[Math.floor(Math.random() * colors.length)];
+            changeColor(randomColor);
+            document.getElementById('colorPicker').value = randomColor;
+        }
+        
+        // To-Do List functions
+        let todos = JSON.parse(localStorage.getItem('todos')) || [];
+        
+        function addTodo() {
+            const input = document.getElementById('todoInput');
+            const text = input.value.trim();
+            
+            if (text) {
+                todos.push({
+                    id: Date.now(),
+                    text: text,
+                    completed: false
+                });
+                
+                input.value = '';
+                saveTodos();
+                renderTodos();
+            }
+        }
+        
+        function toggleTodo(id) {
+            const todo = todos.find(t => t.id === id);
+            if (todo) {
+                todo.completed = !todo.completed;
+                saveTodos();
+                renderTodos();
+            }
+        }
+        
+        function deleteTodo(id) {
+            todos = todos.filter(t => t.id !== id);
+            saveTodos();
+            renderTodos();
+        }
+        
+        function saveTodos() {
+            localStorage.setItem('todos', JSON.stringify(todos));
+        }
+        
+        function renderTodos() {
+            const container = document.getElementById('todoList');
+            const countElement = document.getElementById('todoCount');
+            const completedElement = document.getElementById('completedCount');
+            
+            if (todos.length === 0) {
+                container.innerHTML = '<p style="text-align: center; color: #7f8c8d;">Belum ada tugas. Tambahkan tugas pertama Anda!</p>';
+                countElement.textContent = '0';
+                completedElement.textContent = '0';
+                return;
+            }
+            
+            let html = '';
+            let completedCount = 0;
+            
+            todos.forEach(todo => {
+                if (todo.completed) completedCount++;
+                
+                html += `
+                    <div class="todo-item ${todo.completed ? 'completed' : ''}">
+                        <div style="display: flex; align-items: center; gap: 1rem;">
+                            <input type="checkbox" ${todo.completed ? 'checked' : ''} 
+                                   onclick="toggleTodo(${todo.id})">
+                            <span>${todo.text}</span>
+                        </div>
+                        <button class="btn-secondary" onclick="deleteTodo(${todo.id})" 
+                                style="padding: 0.3rem 0.8rem;">
+                            <i class="fas fa-trash"></i>
+                        </button>
+                    </div>
+                `;
+            });
+            
+            container.innerHTML = html;
+            countElement.textContent = todos.length;
+            completedElement.textContent = completedCount;
+        }
+        
+        // Calculator functions
+        let currentInput = '0';
+        let previousInput = '';
+        let operator = '';
+        
+        function updateDisplay() {
+            const display = document.getElementById('calcDisplay');
+            display.textContent = currentInput;
+        }
+        
+        function appendNumber(num) {
+            if (currentInput === '0' || currentInput === 'Error') {
+                currentInput = num;
+            } else {
+                currentInput += num;
+            }
+            updateDisplay();
+        }
+        
+        function appendOperator(op) {
+            if (currentInput === 'Error') return;
+            
+            if (previousInput && operator) {
+                calculate();
+            }
+            
+            operator = op;
+            previousInput = currentInput;
+            currentInput = '0';
+            updateDisplay();
+        }
+        
+        function appendDecimal() {
+            if (!currentInput.includes('.')) {
+                currentInput += '.';
+                updateDisplay();
+            }
+        }
+        
+        function calculate() {
+            if (!previousInput || !operator || currentInput === 'Error') return;
+            
+            const prev = parseFloat(previousInput);
+            const current = parseFloat(currentInput);
+            let result;
+            
+            switch (operator) {
+                case '+':
+                    result = prev + current;
+                    break;
+                case '-':
+                    result = prev - current;
+                    break;
+                case '*':
+                    result = prev * current;
+                    break;
+                case '/':
+                    if (current === 0) {
+                        result = 'Error';
+                    } else {
+                        result = prev / current;
+                    }
+                    break;
+                default:
+                    return;
+            }
+            
+            currentInput = result.toString();
+            previousInput = '';
+            operator = '';
+            updateDisplay();
+        }
+        
+        function clearCalculator() {
+            currentInput = '0';
+            previousInput = '';
+            operator = '';
+            updateDisplay();
+        }
+        
+        function deleteLast() {
+            if (currentInput.length > 1) {
+                currentInput = currentInput.slice(0, -1);
+            } else {
+                currentInput = '0';
+            }
+            updateDisplay();
+        }
+        
+        // Fetch API functions
+        async function fetchUsers() {
+            try {
+                const response = await fetch('https://jsonplaceholder.typicode.com/users');
+                const users = await response.json();
+                displayUsers(users.slice(0, 5)); // Ambil 5 user pertama
+            } catch (error) {
+                document.getElementById('userList').innerHTML = 
+                    '<p style="color: #e74c3c;">Error mengambil data. Coba lagi nanti.</p>';
+            }
+        }
+        
+        function displayUsers(users) {
+            const container = document.getElementById('userList');
+            let html = '<h4>Data Pengguna:</h4>';
+            
+            users.forEach(user => {
+                const firstLetter = user.name.charAt(0);
+                html += `
+                    <div class="user-card">
+                        <div class="user-avatar">${firstLetter}</div>
+                        <div>
+                            <strong>${user.name}</strong><br>
+                            <small>${user.email}</small><br>
+                            <small>${user.company.name}</small>
+                        </div>
+                    </div>
+                `;
+            });
+            
+            container.innerHTML = html;
+        }
+        
+        function clearUsers() {
+            document.getElementById('userList').innerHTML = '';
+        }
+        
+        // Exercise checking
+        function checkJSExercise(num) {
+            const code = document.getElementById(`jsExercise${num}`).value.trim();
+            const result = document.getElementById(`jsResult${num}`);
+            
+            if (num === 1) {
+                try {
+                    // Create function from user input
+                    eval(code);
+                    // Test the function
+                    const testResult = jumlahkan(5, 3);
+                    if (testResult === 8) {
+                        result.innerHTML = '<span style="color:#27ae60">✓ Function benar! Hasil 5 + 3 = 8</span>';
+                    } else {
+                        result.innerHTML = '<span style="color:#e74c3c">✗ Function tidak menghasilkan nilai yang benar</span>';
+                    }
+                } catch (error) {
+                    result.innerHTML = '<span style="color:#e74c3c">✗ Error: ' + error.message + '</span>';
+                }
+            } else {
+                try {
+                    const userFunction = new Function('arr', code + ' return maxAngka(arr);');
+                    const testArray = [3, 7, 2, 9, 1];
+                    const resultValue = userFunction(testArray);
+                    
+                    if (resultValue === 9) {
+                        result.innerHTML = '<span style="color:#27ae60">✓ Function benar! Angka terbesar dari [3,7,2,9,1] adalah 9</span>';
+                    } else {
+                        result.innerHTML = '<span style="color:#e74c3c">✗ Function tidak menghasilkan nilai yang benar</span>';
+                    }
+                } catch (error) {
+                    result.innerHTML = '<span style="color:#e74c3c">✗ Error: ' + error.message + '</span>';
+                }
+            }
+        }
+        
+        function testFunction() {
+            try {
+                eval(document.getElementById('jsExercise1').value);
+                const result = jumlahkan(10, 20);
+                document.getElementById('testResult').innerHTML = 
+                    `<span style="color:#27ae60">Test: jumlahkan(10, 20) = ${result}</span>`;
+            } catch (error) {
+                document.getElementById('testResult').innerHTML = 
+                    `<span style="color:#e74c3c">Error: ${error.message}</span>`;
+            }
+        }
+        
+        // Initialize
+        document.addEventListener('DOMContentLoaded', function() {
+            updateCounter();
+            renderTodos();
+            updateDisplay();
+            
+            // Set contoh untuk exercise 2
+            document.getElementById('jsExercise2').value = 
+`function maxAngka(arr) {
+    // Cari angka terbesar dalam array
+    let max = arr[0];
+    for (let i = 1; i < arr.length; i++) {
+        if (arr[i] > max) {
+            max = arr[i];
+        }
+    }
+    return max;
+}`;
+        });
+    </script>
+</body>
+</html>

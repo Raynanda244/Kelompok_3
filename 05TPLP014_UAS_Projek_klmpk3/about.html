@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <!--
+    Nama file    : about.html
+    Tanggal ngoding: 23 Desember 2025
+    Kelas        : 05TPLP014
+    Kelompok     : [Kelompok 3]
+    Anggota      : [Muhammad Sabil Bilqisthi ], [Sa’adah Rahma Ilahi], [Raynanda]
+    Deskripsi    : Halaman Tentang - Informasi pembuat dan tujuan website
+    -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tentang Kami - WebDev Tutorial</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <!-- Navigation Bar (same as index.html) -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="index.html" class="nav-logo">WebDev<span>Tutor</span></a>
+            <ul class="nav-menu">
+                <li class="nav-item"><a href="index.html" class="nav-link"><i class="fas fa-home"></i> Home</a></li>
+                <li class="nav-item"><a href="about.html" class="nav-link active"><i class="fas fa-info-circle"></i> Tentang</a></li>
+                <li class="nav-item dropdown">
+                    <a href="#" class="nav-link"><i class="fas fa-book"></i> Materi <i class="fas fa-chevron-down"></i></a>
+                    <div class="dropdown-content">
+                        <a href="materi/bab1.html">Bab 1: Pengenalan HTML</a>
+                        <a href="materi/bab2.html">Bab 2: CSS Dasar</a>
+                        <a href="materi/bab3.html">Bab 3: JavaScript</a>
+                        <a href="materi/bab4.html">Bab 4: Framework CSS</a>
+                    </div>
+                </li>
+                <li class="nav-item"><a href="contact.html" class="nav-link"><i class="fas fa-envelope"></i> Kontak</a></li>
+            </ul>
+            <div class="hamburger">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- About Content -->
+    <main class="materi-container">
+        <div class="materi-header">
+            <h1>Tentang Kami</h1>
+            <p>Mengenal lebih dekat tentang tim pengembang website ini</p>
+        </div>
+        
+        <div class="materi-content">
+            <section class="sub-bab">
+                <h2>Visi & Misi</h2>
+                <p><strong>Visi:</strong> Menjadi platform pembelajaran web development yang mudah diakses dan dipahami oleh semua kalangan.</p>
+                <p><strong>Misi:</strong></p>
+                <ul>
+                    <li>Menyediakan materi pembelajaran web development yang terstruktur</li>
+                    <li>Membantu pemula memahami dasar-dasar HTML, CSS, dan JavaScript</li>
+                    <li>Menyajikan contoh kode yang praktis dan langsung dapat diaplikasikan</li>
+                    <li>Mendorong kreativitas dalam pengembangan website</li>
+                </ul>
+            </section>
+
+            <section class="sub-bab">
+                <h2>Tim Pengembang</h2>
+                <p>Website ini dikembangkan oleh mahasiswa 05TPLP014 sebagai proyek UAS Pemrograman Web 1.</p>
+                
+                <div class="team-grid">
+                    <div class="team-member">
+                        <i class="fas fa-user-circle fa-3x"></i>
+                        <h3>[Muhammad Sabil Bilqisthi ]</h3>
+                        <p><strong>NIM:</strong> [231011400621]</p>
+                        <p><strong>Peran:</strong> Satria Baja Hitam</p>
+                    </div>
+                    <div class="team-member">
+                        <i class="fas fa-user-circle fa-3x"></i>
+                        <h3>[Sa’adah Rahma Ilahi]</h3>
+                        <p><strong>NIM:</strong> [231011402886]</p>
+                        <p><strong>Peran:</strong> UI/UX Designer & JavaScript Developer</p>
+                    </div>
+                    <div class="team-member">
+                        <i class="fas fa-user-circle fa-3x"></i>
+                        <h3>[Raynanda]</h3>
+                        <p><strong>NIM:</strong> [231011403135]</p>
+                        <p><strong>Peran:</strong> Penggusaha Tambang</p>
+                    </div>
+                </div>
+            </section>
+
+            <section class="sub-bab">
+                <h2>Tujuan Pembuatan Website</h2>
+                <p>Website ini dibuat dengan tujuan:</p>
+                <ol>
+                    <li>Memenuhi tugas Ujian Akhir Semester (UAS) Pemrograman Web 1</li>
+                    <li>Menerapkan konsep HTML, CSS, dan JavaScript yang telah dipelajari</li>
+                    <li>Membuat media pembelajaran interaktif tentang web development</li>
+                    <li>Mengasah kemampuan dalam membuat website responsif</li>
+                    <li>Berbagi pengetahuan dasar web development kepada pemula</li>
+                </ol>
+            </section>
+        </div>
+    </main>
+
+    <footer class="footer">
+        <p>&copy; 2025 WebDev Tutorial.[Kelompok 3] - 05TPLP014</p>
+        <p>Proyek UAS Pemrograman Web 1</p>
+    </footer>
+
+    <script src="js/script.js"></script>
+</body>
+</html>

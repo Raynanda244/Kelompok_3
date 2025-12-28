@@ -1,0 +1,532 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <!--
+    Nama file    : bab2.html
+    Tanggal ngoding: 23 Desember 2025
+    Kelas        : 05TPLP014
+    Kelompok     : [Kelompok 3]
+    Anggota      : [Muhammad Sabil Bilqisthi ], [Sa’adah Rahma Ilahi], [Raynanda]
+    Deskripsi    : Halaman Materi Bab 2 - CSS Dasar
+    -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bab 2: CSS Dasar - WebDev Tutorial</title>
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        .css-demo-box {
+            width: 200px;
+            height: 100px;
+            background-color: #3498db;
+            margin: 1rem 0;
+            transition: all 0.3s;
+        }
+        
+        .flex-container {
+            display: flex;
+            gap: 1rem;
+            padding: 1rem;
+            background-color: #f8f9fa;
+            border-radius: 8px;
+            margin: 1rem 0;
+        }
+        
+        .flex-item {
+            background-color: #e74c3c;
+            color: white;
+            padding: 1rem;
+            border-radius: 4px;
+            flex: 1;
+            text-align: center;
+        }
+        
+        .grid-container {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 1rem;
+            margin: 1rem 0;
+        }
+        
+        .grid-item {
+            background-color: #2ecc71;
+            color: white;
+            padding: 2rem;
+            border-radius: 4px;
+            text-align: center;
+        }
+        
+        .animation-demo {
+            width: 100px;
+            height: 100px;
+            background-color: #9b59b6;
+            margin: 2rem auto;
+            border-radius: 4px;
+        }
+        
+        .color-picker {
+            display: flex;
+            gap: 1rem;
+            margin: 1rem 0;
+        }
+        
+        .color-option {
+            width: 50px;
+            height: 50px;
+            border-radius: 4px;
+            cursor: pointer;
+            transition: transform 0.3s;
+        }
+        
+        .color-option:hover {
+            transform: scale(1.1);
+        }
+        
+        .responsive-demo {
+            padding: 2rem;
+            background-color: #34495e;
+            color: white;
+            text-align: center;
+            border-radius: 8px;
+            margin: 1rem 0;
+        }
+        
+        .unit-demo {
+            font-size: 1rem;
+            padding: 1rem;
+            background-color: #ecf0f1;
+            border-radius: 4px;
+            margin: 1rem 0;
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation Bar -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="../index.html" class="nav-logo">WebDev<span>Tutor</span></a>
+            <ul class="nav-menu">
+                <li class="nav-item"><a href="../index.html" class="nav-link"><i class="fas fa-home"></i> Home</a></li>
+                <li class="nav-item"><a href="../about.html" class="nav-link"><i class="fas fa-info-circle"></i> Tentang</a></li>
+                <li class="nav-item dropdown">
+                    <a href="#" class="nav-link active"><i class="fas fa-book"></i> Materi <i class="fas fa-chevron-down"></i></a>
+                    <div class="dropdown-content">
+                        <a href="bab1.html">Bab 1: Pengenalan HTML</a>
+                        <a href="bab2.html" class="active">Bab 2: CSS Dasar</a>
+                        <a href="bab3.html">Bab 3: JavaScript</a>
+                        <a href="bab4.html">Bab 4: Framework CSS</a>
+                    </div>
+                </li>
+                <li class="nav-item"><a href="../contact.html" class="nav-link"><i class="fas fa-envelope"></i> Kontak</a></li>
+            </ul>
+            <div class="hamburger">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Materi Content -->
+    <main class="materi-container">
+        <div class="materi-header">
+            <h1>Bab 2: CSS Dasar</h1>
+            <p>Mengenal Cascading Style Sheets untuk styling website</p>
+        </div>
+        
+        <div class="materi-content">
+            <!-- Sub-bab 2.1 -->
+            <section class="sub-bab" id="selektor">
+                <h2>2.1 Selektor CSS</h2>
+                <p>Selektor digunakan untuk memilih elemen HTML yang akan diberi style.</p>
+                
+                <button class="code-toggle">Tampilkan Kode</button>
+                <div class="code-example" style="display: none;">
+                    <pre><code>/* Selektor elemen */
+p {
+    color: blue;
+}
+
+/* Selektor class */
+.important {
+    font-weight: bold;
+}
+
+/* Selektor ID */
+#header {
+    background-color: #333;
+}
+
+/* Selektor kombinasi */
+div.container p {
+    margin: 10px;
+}
+
+/* Selektor pseudo-class */
+a:hover {
+    color: red;
+}
+
+/* Selektor atribut */
+input[type="text"] {
+    border: 1px solid #ccc;
+}</code></pre>
+                </div>
+                
+                <h3>Demo: Ubah Warna Box</h3>
+                <div class="css-demo-box" id="demoBox">Box Demo</div>
+                <div class="color-picker">
+                    <div class="color-option" style="background-color: #3498db;" onclick="changeBoxColor('#3498db')"></div>
+                    <div class="color-option" style="background-color: #e74c3c;" onclick="changeBoxColor('#e74c3c')"></div>
+                    <div class="color-option" style="background-color: #2ecc71;" onclick="changeBoxColor('#2ecc71')"></div>
+                    <div class="color-option" style="background-color: #f39c12;" onclick="changeBoxColor('#f39c12')"></div>
+                    <div class="color-option" style="background-color: #9b59b6;" onclick="changeBoxColor('#9b59b6')"></div>
+                </div>
+            </section>
+
+            <!-- Sub-bab 2.2 -->
+            <section class="sub-bab" id="layout">
+                <h2>2.2 Layout CSS</h2>
+                <p>CSS menyediakan berbagai teknik untuk membuat layout website.</p>
+                
+                <h3>Flexbox</h3>
+                <p>Flexbox untuk layout satu dimensi (baris atau kolom).</p>
+                
+                <button class="code-toggle">Tampilkan Kode</button>
+                <div class="code-example" style="display: none;">
+                    <pre><code>.container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 1rem;
+}
+
+.item {
+    flex: 1;
+    padding: 1rem;
+}</code></pre>
+                </div>
+                
+                <div class="flex-container">
+                    <div class="flex-item">Item 1</div>
+                    <div class="flex-item">Item 2</div>
+                    <div class="flex-item">Item 3</div>
+                </div>
+                
+                <h3>CSS Grid</h3>
+                <p>Grid untuk layout dua dimensi (baris dan kolom).</p>
+                
+                <button class="code-toggle">Tampilkan Kode</button>
+                <div class="code-example" style="display: none;">
+                    <pre><code>.grid-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1rem;
+    grid-template-rows: auto;
+}
+
+.grid-item {
+    grid-column: span 1;
+}</code></pre>
+                </div>
+                
+                <div class="grid-container">
+                    <div class="grid-item">A</div>
+                    <div class="grid-item">B</div>
+                    <div class="grid-item">C</div>
+                    <div class="grid-item">D</div>
+                    <div class="grid-item">E</div>
+                    <div class="grid-item">F</div>
+                </div>
+                
+                <h3>Box Model</h3>
+                <div class="unit-demo">
+                    <div style="border: 2px solid #3498db; padding: 20px; margin: 30px; background-color: #ecf0f1;">
+                        <p>Margin: 30px</p>
+                        <p>Border: 2px solid</p>
+                        <p>Padding: 20px</p>
+                        <p>Content Area</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Sub-bab 2.3 -->
+            <section class="sub-bab" id="responsive">
+                <h2>2.3 Responsive Design</h2>
+                <p>Membuat website yang tampil optimal di berbagai ukuran layar.</p>
+                
+                <h3>Media Queries</h3>
+                <button class="code-toggle">Tampilkan Kode</button>
+                <div class="code-example" style="display: none;">
+                    <pre><code>/* Mobile first */
+.container {
+    padding: 1rem;
+}
+
+/* Tablet */
+@media (min-width: 768px) {
+    .container {
+        padding: 2rem;
+    }
+}
+
+/* Desktop */
+@media (min-width: 1024px) {
+    .container {
+        max-width: 1200px;
+        margin: 0 auto;
+    }
+}</code></pre>
+                </div>
+                
+                <div class="responsive-demo" id="responsiveDemo">
+                    <h3>Resize window untuk melihat efek responsif!</h3>
+                    <p>Ukuran layar saat ini: <span id="screenSize">0px</span></p>
+                    <p class="device-info" id="deviceInfo"></p>
+                </div>
+                
+                <h3>Unit CSS yang Responsif</h3>
+                <ul>
+                    <li><code>%</code> - Persentase relatif terhadap parent</li>
+                    <li><code>vw/vh</code> - Viewport width/height</li>
+                    <li><code>rem</code> - Relatif terhadap root font-size</li>
+                    <li><code>em</code> - Relatif terhadap font-size parent</li>
+                </ul>
+                
+                <div class="unit-demo">
+                    <div style="font-size: 2rem;">Text 2rem</div>
+                    <div style="font-size: 1.5rem;">Text 1.5rem</div>
+                    <div style="font-size: 1rem;">Text 1rem</div>
+                    <div style="font-size: 0.8rem;">Text 0.8rem</div>
+                </div>
+            </section>
+
+            <!-- Sub-bab 2.4 -->
+            <section class="sub-bab" id="animasi">
+                <h2>2.4 Animasi & Transition</h2>
+                <p>Membuat website lebih hidup dengan animasi CSS.</p>
+                
+                <h3>Transition</h3>
+                <button class="code-toggle">Tampilkan Kode</button>
+                <div class="code-example" style="display: none;">
+                    <pre><code>.box {
+    width: 100px;
+    height: 100px;
+    background-color: blue;
+    transition: all 0.3s ease;
+}
+
+.box:hover {
+    width: 150px;
+    background-color: red;
+    transform: rotate(15deg);
+}</code></pre>
+                </div>
+                
+                <h3>Animation dengan @keyframes</h3>
+                <button class="code-toggle">Tampilkan Kode</button>
+                <div class="code-example" style="display: none;">
+<pre><code>@keyframes bounce {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-20px); }
+}
+
+.animated-box {
+    animation: bounce 1s infinite;
+}</code></pre>
+                </div>
+                
+                <div class="animation-demo" id="animationDemo"></div>
+                <div style="text-align: center; margin: 1rem;">
+                    <button class="btn-secondary" onclick="toggleAnimation()">Toggle Animation</button>
+                    <button class="btn-secondary" onclick="changeAnimation('bounce')">Bounce</button>
+                    <button class="btn-secondary" onclick="changeAnimation('rotate')">Rotate</button>
+                    <button class="btn-secondary" onclick="changeAnimation('color')">Color Change</button>
+                </div>
+            </section>
+
+            <!-- Latihan Interaktif -->
+            <section class="sub-bab" id="latihan">
+                <h2>Latihan CSS</h2>
+                
+                <div class="exercise">
+                    <h3>Soal 1: Buat Box dengan CSS</h3>
+                    <p>Buat CSS untuk box dengan:</p>
+                    <ul>
+                        <li>Lebar 300px, tinggi 200px</li>
+                        <li>Background warna #3498db</li>
+                        <li>Border radius 10px</li>
+                        <li>Padding 20px</li>
+                    </ul>
+                    
+                    <div class="code-editor">
+                        <textarea id="cssExercise1" rows="6" placeholder="Tulis kode CSS di sini...">.my-box {
+    
+}</textarea>
+                        <button class="btn-secondary" onclick="checkCSSExercise(1)">Cek Jawaban</button>
+                        <div id="cssResult1"></div>
+                        <div id="cssPreview1" class="css-preview"></div>
+                    </div>
+                </div>
+                
+                <div class="exercise">
+                    <h3>Soal 2: Media Query</h3>
+                    <p>Buat media query untuk tablet (min-width: 768px)</p>
+                    
+                    <div class="code-editor">
+                        <textarea id="cssExercise2" rows="6" placeholder="Tulis kode CSS di sini..."></textarea>
+                        <button class="btn-secondary" onclick="checkCSSExercise(2)">Cek Jawaban</button>
+                        <div id="cssResult2"></div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Navigasi Bab -->
+            <div class="bab-navigation">
+                <a href="bab1.html" class="btn-secondary"><i class="fas fa-arrow-left"></i> Bab Sebelumnya</a>
+                <a href="bab3.html" class="btn-primary">Bab Selanjutnya: JavaScript <i class="fas fa-arrow-right"></i></a>
+            </div>
+        </div>
+    </main>
+
+    <footer class="footer">
+        <p>&copy; 2025 WebDev Tutorial.[Kelompok 3] - 05TPLP014</p>
+        <p>Proyek UAS Pemrograman Web 1</p>
+    </footer>
+
+    <script src="../js/script.js"></script>
+    <script>
+        // CSS Demo Functions
+        function changeBoxColor(color) {
+            const box = document.getElementById('demoBox');
+            box.style.backgroundColor = color;
+            box.style.transform = 'scale(1.1)';
+            setTimeout(() => {
+                box.style.transform = 'scale(1)';
+            }, 300);
+        }
+        
+        function toggleAnimation() {
+            const demo = document.getElementById('animationDemo');
+            const style = window.getComputedStyle(demo);
+            const animation = style.getPropertyValue('animation');
+            
+            if (animation === 'none' || !animation) {
+                demo.style.animation = 'bounce 1s infinite';
+            } else {
+                demo.style.animation = 'none';
+            }
+        }
+        
+        function changeAnimation(type) {
+            const demo = document.getElementById('animationDemo');
+            
+            switch(type) {
+                case 'bounce':
+                    demo.style.animation = 'bounce 1s infinite';
+                    break;
+                case 'rotate':
+                    demo.style.animation = 'rotate 2s linear infinite';
+                    break;
+                case 'color':
+                    demo.style.animation = 'colorChange 3s infinite';
+                    break;
+            }
+        }
+        
+        // Screen size detection
+        function updateScreenSize() {
+            const width = window.innerWidth;
+            const height = window.innerHeight;
+            const screenSize = document.getElementById('screenSize');
+            const deviceInfo = document.getElementById('deviceInfo');
+            
+            screenSize.textContent = `${width}px × ${height}px`;
+            
+            let device = 'Desktop';
+            if (width < 768) device = 'Mobile';
+            else if (width < 1024) device = 'Tablet';
+            
+            deviceInfo.textContent = `Device: ${device}`;
+            
+            // Update responsive demo
+            const demo = document.getElementById('responsiveDemo');
+            if (width < 768) {
+                demo.style.backgroundColor = '#e74c3c';
+                demo.innerHTML = '<h3>📱 Tampilan Mobile</h3><p>Layout satu kolom</p>';
+            } else if (width < 1024) {
+                demo.style.backgroundColor = '#f39c12';
+                demo.innerHTML = '<h3>📱 Tampilan Tablet</h3><p>Layout dua kolom</p>';
+            } else {
+                demo.style.backgroundColor = '#2ecc71';
+                demo.innerHTML = '<h3>💻 Tampilan Desktop</h3><p>Layout tiga kolom</p>';
+            }
+        }
+        
+        // Exercise checking
+        function checkCSSExercise(num) {
+            const answer1 = `.my-box {\n    width: 300px;\n    height: 200px;\n    background-color: #3498db;\n    border-radius: 10px;\n    padding: 20px;\n}`;
+            const answer2 = `@media (min-width: 768px) {\n    .container {\n        max-width: 750px;\n        margin: 0 auto;\n    }\n}`;
+            
+            const code = document.getElementById(`cssExercise${num}`).value.trim();
+            const result = document.getElementById(`cssResult${num}`);
+            const answer = num === 1 ? answer1 : answer2;
+            
+            // Simple check (in real app, use more sophisticated checking)
+            if (num === 1) {
+                const hasWidth = code.includes('300px') || code.includes('width');
+                const hasHeight = code.includes('200px') || code.includes('height');
+                const hasBackground = code.includes('#3498db') || code.includes('background-color');
+                const hasRadius = code.includes('10px') || code.includes('border-radius');
+                const hasPadding = code.includes('20px') || code.includes('padding');
+                
+                if (hasWidth && hasHeight && hasBackground && hasRadius && hasPadding) {
+                    result.innerHTML = '<span style="color:#27ae60">✓ CSS benar! Lihat preview di bawah.</span>';
+                    
+                    // Show preview
+                    const preview = document.getElementById('cssPreview1');
+                    preview.innerHTML = '<div class="my-box" style="width: 300px; height: 200px; background-color: #3498db; border-radius: 10px; padding: 20px; margin: 1rem 0;">Box Preview</div>';
+                } else {
+                    result.innerHTML = '<span style="color:#e74c3c">✗ Periksa kembali CSS Anda. Pastikan semua properti ada.</span>';
+                }
+            } else {
+                if (code.includes('@media') && code.includes('768px')) {
+                    result.innerHTML = '<span style="color:#27ae60">✓ Media query benar!</span>';
+                } else {
+                    result.innerHTML = '<span style="color:#e74c3c">✗ Pastikan menggunakan @media dengan min-width: 768px</span>';
+                }
+            }
+        }
+        
+        // Initialize
+        document.addEventListener('DOMContentLoaded', function() {
+            updateScreenSize();
+            window.addEventListener('resize', updateScreenSize);
+            
+            // Add CSS for animations
+            const style = document.createElement('style');
+            style.textContent = `
+                @keyframes bounce {
+                    0%, 100% { transform: translateY(0); }
+                    50% { transform: translateY(-20px); }
+                }
+                
+                @keyframes rotate {
+                    0% { transform: rotate(0deg); }
+                    100% { transform: rotate(360deg); }
+                }
+                
+                @keyframes colorChange {
+                    0% { background-color: #9b59b6; }
+                    50% { background-color: #3498db; }
+                    100% { background-color: #9b59b6; }
+                }
+            `;
+            document.head.appendChild(style);
+            
+            // Set initial animation
+            document.getElementById('animationDemo').style.animation = 'bounce 1s infinite';
+        });
+    </script>
+</body>
+</html>

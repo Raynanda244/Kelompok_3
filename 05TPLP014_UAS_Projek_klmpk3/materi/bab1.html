@@ -1,0 +1,363 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <!--
+    Nama file    : bab1.html
+    Tanggal ngoding: 23 Desember 2025
+    Kelas        : 05TPLP014
+    Kelompok     : [Kelompok 3]
+    Anggota      : [Muhammad Sabil Bilqisthi ], [Sa’adah Rahma Ilahi], [Raynanda]
+    Deskripsi    : Halaman Materi Bab 1 - Pengenalan HTML
+    -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bab 1: Pengenalan HTML - WebDev Tutorial</title>
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <!-- Navigation Bar -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="../index.html" class="nav-logo">WebDev<span>Tutor</span></a>
+            <ul class="nav-menu">
+                <li class="nav-item"><a href="../index.html" class="nav-link"><i class="fas fa-home"></i> Home</a></li>
+                <li class="nav-item"><a href="../about.html" class="nav-link"><i class="fas fa-info-circle"></i> Tentang</a></li>
+                <li class="nav-item dropdown">
+                    <a href="#" class="nav-link active"><i class="fas fa-book"></i> Materi <i class="fas fa-chevron-down"></i></a>
+                    <div class="dropdown-content">
+                        <a href="bab1.html" class="active">Bab 1: Pengenalan HTML</a>
+                        <a href="bab2.html">Bab 2: CSS Dasar</a>
+                        <a href="bab3.html">Bab 3: JavaScript</a>
+                        <a href="bab4.html">Bab 4: Framework CSS</a>
+                    </div>
+                </li>
+                <li class="nav-item"><a href="../contact.html" class="nav-link"><i class="fas fa-envelope"></i> Kontak</a></li>
+            </ul>
+            <div class="hamburger">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Materi Content -->
+    <main class="materi-container">
+        <div class="materi-header">
+            <h1>Bab 1: Pengenalan HTML</h1>
+            <p>Mengenal dasar-dasar HTML untuk membangun struktur website</p>
+        </div>
+        
+        <div class="materi-content">
+            <!-- Sub-bab 1.1 -->
+            <section class="sub-bab" id="struktur">
+                <h2>1.1 Struktur Dokumen HTML</h2>
+                <p>HTML (HyperText Markup Language) adalah bahasa markup yang digunakan untuk membuat struktur halaman web.</p>
+                
+                <button class="code-toggle">Tampilkan Kode</button>
+                <div class="code-example" style="display: none;">
+                    <pre><code>&lt;!DOCTYPE html&gt;
+&lt;html lang="id"&gt;
+&lt;head&gt;
+    &lt;meta charset="UTF-8"&gt;
+    &lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;
+    &lt;title&gt;Contoh Halaman HTML&lt;/title&gt;
+&lt;/head&gt;
+&lt;body&gt;
+    &lt;h1&gt;Selamat Datang&lt;/h1&gt;
+    &lt;p&gt;Ini adalah paragraf pertama.&lt;/p&gt;
+&lt;/body&gt;
+&lt;/html&gt;</code></pre>
+                </div>
+                
+                <h3>Elemen Penting:</h3>
+                <ul>
+                    <li><code>&lt;!DOCTYPE html&gt;</code> - Deklarasi versi HTML</li>
+                    <li><code>&lt;html&gt;</code> - Elemen root</li>
+                    <li><code>&lt;head&gt;</code> - Informasi metadata</li>
+                    <li><code>&lt;body&gt;</code> - Konten utama halaman</li>
+                </ul>
+            </section>
+
+            <!-- Sub-bab 1.2 -->
+            <section class="sub-bab" id="element">
+                <h2>1.2 Element HTML Dasar</h2>
+                <p>HTML terdiri dari berbagai element yang memiliki fungsi berbeda-beda.</p>
+                
+                <h3>Heading (h1-h6)</h3>
+                <p>Digunakan untuk judul dengan level berbeda.</p>
+                
+                <button class="code-toggle">Tampilkan Kode</button>
+                <div class="code-example" style="display: none;">
+                    <pre><code>&lt;h1&gt;Judul Utama (Level 1)&lt;/h1&gt;
+&lt;h2&gt;Sub Judul (Level 2)&lt;/h2&gt;
+&lt;h3&gt;Sub Judul (Level 3)&lt;/h3&gt;</code></pre>
+                </div>
+                
+                <h3>Paragraf dan Format Teks</h3>
+                <button class="code-toggle">Tampilkan Kode</button>
+                <div class="code-example" style="display: none;">
+                    <pre><code>&lt;p&gt;Ini adalah paragraf biasa.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Teks tebal&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;&lt;em&gt;Teks miring&lt;/em&gt;&lt;/p&gt;
+&lt;p&gt;&lt;u&gt;Teks bergaris bawah&lt;/u&gt;&lt;/p&gt;</code></pre>
+                </div>
+                
+                <h3>List (Daftar)</h3>
+                <button class="code-toggle">Tampilkan Kode</button>
+                <div class="code-example" style="display: none;">
+                    <pre><code>&lt;!-- List tak berurutan --&gt;
+&lt;ul&gt;
+    &lt;li&gt;Item 1&lt;/li&gt;
+    &lt;li&gt;Item 2&lt;/li&gt;
+    &lt;li&gt;Item 3&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;!-- List berurutan --&gt;
+&lt;ol&gt;
+    &lt;li&gt;Langkah pertama&lt;/li&gt;
+    &lt;li&gt;Langkah kedua&lt;/li&gt;
+    &lt;li&gt;Langkah ketiga&lt;/li&gt;
+&lt;/ol&gt;</code></pre>
+                </div>
+                
+                <h3>Gambar dan Link</h3>
+                <button class="code-toggle">Tampilkan Kode</button>
+                <div class="code-example" style="display: none;">
+                    <pre><code>&lt;!-- Link --&gt;
+&lt;a href="https://www.contoh.com"&gt;Kunjungi Website&lt;/a&gt;
+
+&lt;!-- Gambar --&gt;
+&lt;img src="gambar.jpg" alt="Deskripsi gambar" width="300"&gt;</code></pre>
+                </div>
+            </section>
+
+            <!-- Sub-bab 1.3 -->
+            <section class="sub-bab" id="form">
+                <h2>1.3 Formulir HTML</h2>
+                <p>Formulir digunakan untuk mengumpulkan input dari pengguna.</p>
+                
+                <button class="code-toggle">Tampilkan Kode</button>
+                <div class="code-example" style="display: none;">
+                    <pre><code>&lt;form action="/submit" method="POST"&gt;
+    &lt;label for="nama"&gt;Nama:&lt;/label&gt;
+    &lt;input type="text" id="nama" name="nama" required&gt;
+    
+    &lt;label for="email"&gt;Email:&lt;/label&gt;
+    &lt;input type="email" id="email" name="email" required&gt;
+    
+    &lt;label for="password"&gt;Password:&lt;/label&gt;
+    &lt;input type="password" id="password" name="password" minlength="8"&gt;
+    
+    &lt;label for="pesan"&gt;Pesan:&lt;/label&gt;
+    &lt;textarea id="pesan" name="pesan" rows="4"&gt;&lt;/textarea&gt;
+    
+    &lt;button type="submit"&gt;Kirim&lt;/button&gt;
+&lt;/form&gt;</code></pre>
+                </div>
+                
+                <h3>Demo Formulir Interaktif</h3>
+                <div class="form-demo">
+                    <form id="demoForm">
+                        <div class="form-group">
+                            <label for="demoNama">Nama:</label>
+                            <input type="text" id="demoNama" placeholder="Masukkan nama">
+                        </div>
+                        <div class="form-group">
+                            <label for="demoEmail">Email:</label>
+                            <input type="email" id="demoEmail" placeholder="contoh@email.com">
+                        </div>
+                        <button type="button" class="btn-secondary" onclick="submitDemoForm()">Submit Demo</button>
+                    </form>
+                    <p id="demoResult"></p>
+                </div>
+                
+                <h3>Input Types HTML5:</h3>
+                <ul>
+                    <li><code>type="email"</code> - Validasi email otomatis</li>
+                    <li><code>type="date"</code> - Pilih tanggal</li>
+                    <li><code>type="number"</code> - Input angka</li>
+                    <li><code>type="color"</code> - Pilih warna</li>
+                    <li><code>type="range"</code> - Slider</li>
+                </ul>
+            </section>
+
+            <!-- Latihan Interaktif -->
+            <section class="sub-bab" id="latihan">
+                <h2>Latihan Interaktif</h2>
+                <p>Coba lengkapi kode HTML berikut:</p>
+                
+                <div class="exercise">
+                    <h3>Soal 1: Membuat Heading</h3>
+                    <p>Buat heading level 1 dengan teks "Belajar HTML"</p>
+                    <div class="code-editor">
+                        <textarea id="codeExercise1" rows="2" placeholder="Tulis kode HTML di sini...">&lt;h1&gt;</textarea>
+                        <button class="btn-secondary" onclick="checkExercise(1)">Cek Jawaban</button>
+                        <p id="result1"></p>
+                    </div>
+                </div>
+                
+                <div class="exercise">
+                    <h3>Soal 2: Membuat Link</h3>
+                    <p>Buat link ke "https://www.google.com" dengan teks "Google"</p>
+                    <div class="code-editor">
+                        <textarea id="codeExercise2" rows="2" placeholder="Tulis kode HTML di sini..."></textarea>
+                        <button class="btn-secondary" onclick="checkExercise(2)">Cek Jawaban</button>
+                        <p id="result2"></p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Navigasi Bab -->
+            <div class="bab-navigation">
+                <a href="../index.html" class="btn-secondary"><i class="fas fa-home"></i> Home</a>
+                <a href="bab2.html" class="btn-primary">Bab Selanjutnya: CSS Dasar <i class="fas fa-arrow-right"></i></a>
+            </div>
+        </div>
+    </main>
+
+    <footer class="footer">
+        <p>&copy; 2025 WebDev Tutorial.[Kelompok 3] - 05TPLP014</p>
+        <p>Proyek UAS Pemrograman Web 1</p>
+    </footer>
+
+    <script src="../js/script.js"></script>
+    <script>
+        // Demo Form Function
+        function submitDemoForm() {
+            const nama = document.getElementById('demoNama').value;
+            const email = document.getElementById('demoEmail').value;
+            const result = document.getElementById('demoResult');
+            
+            if (nama && email) {
+                result.innerHTML = `Terima kasih <strong>${nama}</strong>! Email Anda: ${email}`;
+                result.style.color = '#27ae60';
+            } else {
+                result.innerHTML = 'Silakan isi semua field!';
+                result.style.color = '#e74c3c';
+            }
+        }
+        
+        // Exercise Checking Function
+        function checkExercise(exerciseNum) {
+            const answer1 = '&lt;h1&gt;Belajar HTML&lt;/h1&gt;';
+            const answer2 = '&lt;a href="https://www.google.com"&gt;Google&lt;/a&gt;';
+            
+            const code = document.getElementById(`codeExercise${exerciseNum}`).value.trim();
+            const result = document.getElementById(`result${exerciseNum}`);
+            const answer = exerciseNum === 1 ? answer1 : answer2;
+            
+            if (code.toLowerCase() === answer.toLowerCase()) {
+                result.innerHTML = '<span style="color:#27ae60">✓ Benar! Kode Anda tepat.</span>';
+                result.style.color = '#27ae60';
+            } else {
+                result.innerHTML = `<span style="color:#e74c3c">✗ Coba lagi. Jawaban yang benar: <code>${answer}</code></span>`;
+                result.style.color = '#e74c3c';
+            }
+        }
+        
+        // Initialize code editors
+        document.addEventListener('DOMContentLoaded', function() {
+            // Set contoh jawaban untuk soal 1
+            document.getElementById('codeExercise1').value = '&lt;h1&gt;';
+            
+            // Add syntax highlighting for code examples
+            const codeBlocks = document.querySelectorAll('code');
+            codeBlocks.forEach(block => {
+                const html = block.innerHTML;
+                block.innerHTML = html
+                    .replace(/&lt;/g, '<span style="color:#e74c3c">&lt;</span>')
+                    .replace(/&gt;/g, '<span style="color:#e74c3c">&gt;</span>')
+                    .replace(/(".*?")/g, '<span style="color:#27ae60">$1</span>');
+            });
+        });
+    </script>
+    
+    <style>
+        .form-demo {
+            background-color: #f8f9fa;
+            padding: 1.5rem;
+            border-radius: 8px;
+            margin: 1rem 0;
+            border-left: 4px solid #3498db;
+        }
+        
+        .exercise {
+            margin: 2rem 0;
+            padding: 1.5rem;
+            background-color: white;
+            border-radius: 8px;
+            border: 1px solid #ddd;
+        }
+        
+        .code-editor textarea {
+            width: 100%;
+            padding: 1rem;
+            font-family: 'Courier New', monospace;
+            font-size: 1rem;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            margin: 1rem 0;
+        }
+        
+        .bab-navigation {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 3rem;
+            padding-top: 2rem;
+            border-top: 2px solid #eee;
+        }
+        
+        .team-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin: 2rem 0;
+        }
+        
+        .team-member {
+            text-align: center;
+            padding: 1.5rem;
+            background-color: #f8f9fa;
+            border-radius: 8px;
+            transition: transform 0.3s;
+        }
+        
+        .team-member:hover {
+            transform: translateY(-5px);
+        }
+        
+        .team-member i {
+            color: #3498db;
+            margin-bottom: 1rem;
+        }
+        
+        .notes {
+            background-color: #fff3cd;
+            border: 1px solid #ffeaa7;
+            padding: 1rem;
+            border-radius: 4px;
+            margin-top: 2rem;
+        }
+        
+        .video-card {
+            text-align: center;
+            padding: 1.5rem;
+            background-color: white;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        
+        .video-card h3 {
+            margin-top: 1rem;
+            color: #2c3e50;
+        }
+        
+        .video-card video {
+            border-radius: 4px;
+            background-color: #000;
+        }
+    </style>
+</body>
+</html>

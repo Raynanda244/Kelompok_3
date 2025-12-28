@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <!--
+    Nama file    : index.html
+    Tanggal ngoding: 23 Desember 2025
+    Kelas        : 05TPLP014
+    Kelompok     : [Kelompok 3]
+    Anggota      : [Muhammad Sabil Bilqisthi ], [Sa’adah Rahma Ilahi], [Raynanda]
+    Deskripsi    : Halaman utama website tutorial HTML, CSS, JavaScript
+    -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WebDev Tutorial - Home</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <!-- Navigation Bar -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="index.html" class="nav-logo">WebDev<span>Tutor</span></a>
+            
+            <ul class="nav-menu">
+                <li class="nav-item"><a href="index.html" class="nav-link active"><i class="fas fa-home"></i> Home</a></li>
+                <li class="nav-item"><a href="about.html" class="nav-link"><i class="fas fa-info-circle"></i> Tentang</a></li>
+                <li class="nav-item dropdown">
+                    <a href="#" class="nav-link"><i class="fas fa-book"></i> Materi <i class="fas fa-chevron-down"></i></a>
+                    <div class="dropdown-content">
+                        <a href="materi/bab1.html">Bab 1: Pengenalan HTML</a>
+                        <a href="materi/bab2.html">Bab 2: CSS Dasar</a>
+                        <a href="materi/bab3.html">Bab 3: JavaScript</a>
+                        <a href="materi/bab4.html">Bab 4: Framework CSS</a>
+                    </div>
+                </li>
+                <li class="nav-item"><a href="contact.html" class="nav-link"><i class="fas fa-envelope"></i> Kontak</a></li>
+            </ul>
+            
+            <div class="hamburger">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <header class="hero">
+        <div class="hero-content">
+            <h1>Belajar Web Development dari Nol</h1>
+            <p>Tutorial lengkap HTML, CSS, dan JavaScript untuk pemula</p>
+            <a href="materi/bab1.html" class="btn-primary">Mulai Belajar</a>
+        </div>
+        <div class="hero-image">
+            <img src="images/logo.jpg" alt="Web Development">
+        </div>
+    </header>
+
+    <!-- Features Section -->
+    <section class="features">
+        <h2>Apa yang Akan Anda Pelajari?</h2>
+        <div class="features-grid">
+            <div class="feature-card">
+                <i class="fas fa-code"></i>
+                <h3>HTML5</h3>
+                <p>Struktur dasar website dengan semantic elements</p>
+            </div>
+            <div class="feature-card">
+                <i class="fas fa-paint-brush"></i>
+                <h3>CSS3</h3>
+                <p>Styling modern dengan Flexbox, Grid, dan animasi</p>
+            </div>
+            <div class="feature-card">
+                <i class="fas fa-cogs"></i>
+                <h3>JavaScript</h3>
+                <p>Membuat website interaktif dengan ES6+</p>
+            </div>
+            <div class="feature-card">
+                <i class="fas fa-mobile-alt"></i>
+                <h3>Responsive</h3>
+                <p>Website yang tampil sempurna di semua device</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Content Overview -->
+    <section class="content-overview">
+        <h2>Materi Pembelajaran</h2>
+        <div class="bab-container">
+            <div class="bab-card">
+                <h3>Bab 1: Pengenalan HTML</h3>
+                <ul>
+                    <li><a href="materi/bab1.html#struktur">1.1 Struktur Dokumen HTML</a></li>
+                    <li><a href="materi/bab1.html#element">1.2 Element HTML Dasar</a></li>
+                    <li><a href="materi/bab1.html#form">1.3 Formulir HTML</a></li>
+                </ul>
+            </div>
+            <div class="bab-card">
+                <h3>Bab 2: CSS Dasar</h3>
+                <ul>
+                    <li><a href="materi/bab2.html#selektor">2.1 Selektor CSS</a></li>
+                    <li><a href="materi/bab2.html#layout">2.2 Layout CSS</a></li>
+                    <li><a href="materi/bab2.html#responsive">2.3 Responsive Design</a></li>
+                </ul>
+            </div>
+            <div class="bab-card">
+                <h3>Bab 3: JavaScript</h3>
+                <ul>
+                    <li><a href="materi/bab3.html#variabel">3.1 Variabel & Tipe Data</a></li>
+                    <li><a href="materi/bab3.html#event">3.2 Event & DOM</a></li>
+                    <li><a href="materi/bab3.html#ajax">3.3 AJAX & Fetch API</a></li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <p>&copy; 2025 WebDev Tutorial.[Kelompok 3] - 05TPLP014</p>
+        <p>Proyek UAS Pemrograman Web 1</p>
+    </footer>
+
+    <script src="js/script.js"></script>
+</body>
+</html>

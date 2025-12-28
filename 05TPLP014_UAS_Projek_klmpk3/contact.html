@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <!--
+    Nama file    : contact.html
+    Tanggal ngoding: 23 Desember 2025
+    Kelas        : 05TPLP014
+    Kelompok     : [Kelompok 3]
+    Anggota      : [Muhammad Sabil Bilqisthi ], [Sa’adah Rahma Ilahi], [Raynanda]
+    Deskripsi    : Halaman Kontak berisi form, video perkenalan anggota kelompok
+    -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kontak - WebDev Tutorial</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <!-- Navigation Bar -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="index.html" class="nav-logo">WebDev<span>Tutor</span></a>
+            <ul class="nav-menu">
+                <li class="nav-item"><a href="index.html" class="nav-link"><i class="fas fa-home"></i> Home</a></li>
+                <li class="nav-item"><a href="about.html" class="nav-link"><i class="fas fa-info-circle"></i> Tentang</a></li>
+                <li class="nav-item dropdown">
+                    <a href="#" class="nav-link"><i class="fas fa-book"></i> Materi <i class="fas fa-chevron-down"></i></a>
+                    <div class="dropdown-content">
+                        <a href="materi/bab1.html">Bab 1: Pengenalan HTML</a>
+                        <a href="materi/bab2.html">Bab 2: CSS Dasar</a>
+                        <a href="materi/bab3.html">Bab 3: JavaScript</a>
+                        <a href="materi/bab4.html">Bab 4: Framework CSS</a>
+                    </div>
+                </li>
+                <li class="nav-item"><a href="contact.html" class="nav-link active"><i class="fas fa-envelope"></i> Kontak</a></li>
+            </ul>
+            <div class="hamburger">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Contact Content -->
+    <main class="contact-container">
+        <div class="materi-header">
+            <h1>Hubungi Kami</h1>
+            <p>Kirim pesan atau tonton video perkenalan anggota kelompok</p>
+        </div>
+
+        <div class="contact-form">
+            <h2>Formulir Kontak</h2>
+            <form id="contactForm">
+                <div class="form-group">
+                    <label for="name">Nama Lengkap:</label>
+                    <input type="text" id="name" name="name" placeholder="Masukkan nama Anda">
+                </div>
+                
+                <div class="form-group">
+                    <label for="email">Email:</label>
+                    <input type="email" id="email" name="email" placeholder="contoh@email.com">
+                </div>
+                
+                <div class="form-group">
+                    <label for="message">Pesan:</label>
+                    <textarea id="message" name="message" placeholder="Tulis pesan Anda di sini..."></textarea>
+                </div>
+                
+                <button type="submit" class="btn-primary">Kirim Pesan</button>
+            </form>
+        </div>
+
+        <!-- Video Section -->
+        <div class="video-section">
+            <h2>Perkenalan Anggota Kelompok</h2>
+            <p>Berikut adalah video perkenalan dari masing-masing anggota kelompok:</p>
+            
+            <div class="video-container">
+                <div class="video-card">
+                    <h3>[Muhammad Sabil Bilqisthi]</h3>
+                    <video controls width="100%">
+                        <source src="video/anggota2.mp4" type="video/mp4">
+                        Browser Anda tidak mendukung video tag.
+                    </video>
+                    <p><strong>Peran:</strong> Satria Baja Hitam</p>
+                    <p><strong>Tugas:</strong> Membuat struktur HTML, konten tutorial, dan dokumentasi</p>
+                </div>
+                
+                <div class="video-card">
+                    <h3>[Sa’adah Rahma Ilahi]</h3>
+                    <video controls width="100%">
+                        <source src="video/anggota2.mp4" type="video/mp4">
+                        Browser Anda tidak mendukung video tag.
+                    </video>
+                    <p><strong>Peran:</strong> UI/UX Designer & JavaScript Developer</p>
+                    <p><strong>Tugas:</strong> Mendesain tampilan website dan membuat interaktivitas dengan JavaScript</p>
+                </div>
+                
+                <div class="video-card">
+                    <h3>[Raynanda]</h3>
+                    <video controls width="100%">
+                        <source src="video/anggota3.mp4" type="video/mp4">
+                        Browser Anda tidak mendukung video tag.
+                    </video>
+                    <p><strong>Peran:</strong> Project Manager & Quality Assurance</p>
+                    <p><strong>Tugas:</strong> Mengkoordinasi tim, testing website, dan memastikan kualitas</p>
+                </div>
+            </div>
+            
+            <div class="notes">
+                <p><strong>Catatan:</strong> Pastikan untuk:</p>
+                <ul>
+                    <li>Menggunakan almamater/jas kampus dalam video</li>
+                    <li>Menjelaskan pembagian tugas dengan jelas</li>
+                    <li>Video disimpan dalam folder /video/ dengan format .mp4</li>
+                </ul>
+            </div>
+        </div>
+    </main>
+
+    <footer class="footer">
+        <p>&copy; 2025 WebDev Tutorial.[Kelompok 3] - 05TPLP014</p>
+        <p>Proyek UAS Pemrograman Web 1</p>
+    </footer>
+
+    <script src="js/script.js"></script>
+</body>
+</html>
